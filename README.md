@@ -1,10 +1,10 @@
 <p align="center">
-  <img src="images/title_screen.png" width="640" alt="Title Screen">
+  <img src="images/background_image.png" width="640" alt="Title Screen">
 </p>
 
 # 🎮 PolarisKit
 
-PolarisKit is a modular starter kit for building 2D games with Pygame — designed to help developers get from idea to gameplay fast.
+PolarisKit is a modular starter kit for building 2D games with Pygame, designed to help developers get from idea to gameplay fast.
 
 It includes:
 
@@ -18,7 +18,7 @@ It includes:
 
 ## 💡 Why PolarisKit?
 
-Pygame is an amazing library — but structuring your project can be a challenge. PolarisKit gives you a lightweight but solid foundation so you can focus on *your* game mechanics instead of boilerplate.
+Pygame is an amazing library, but structuring your project can be a challenge. PolarisKit gives you a lightweight but solid foundation so you can focus on *your* game mechanics instead of boilerplate.
 
 ---
 
@@ -34,7 +34,7 @@ Pygame is an amazing library — but structuring your project can be a challenge
 ## 🧠 Built By
 
 Marco @ **SB Studios**  
-[GitHub](https://github.com/marcoagonzalez) | [LinkedIn](https://www.linkedin.com/in/marco-a-gonzalez99)
+[GitHub](https://github.com/marcogonzalez99) | [LinkedIn](https://www.linkedin.com/in/marco-a-gonzalez99)
 
 ---
 
