@@ -2,58 +2,67 @@
   <img src="images/background_image.png" width="640" alt="PolarisKit Title Screen">
 </p>
 
-# 🎮 PolarisKit v1.1
+# ❄️ PolarisKit – A Lightweight Game Starter Kit for Pygame
 
-**PolarisKit** is a modular starter kit for building 2D games with Pygame, built by Polaris Studios, the game development branch of SB Studios.
+**PolarisKit** is a modular, scalable, and beginner-friendly starter kit for creating 2D games in Python using Pygame.  
+It includes built-in scene management, asset handling, audio control, and a global pause/debug system — all designed to help you build polished games faster.
 
-This internal toolkit helps us move from idea to gameplay *fast* with a clean structure, asset management, and scene handling out of the box.
+---
 
-### Features
+## 🚀 Features
 
-- Direct **scene management system** (Title, Game, Pause)
-- Global **pause system** (ESC key from anywhere)
-- Simple asset + sound loader (images, SFX, fonts)
-- Scalable, clean **folder structure**
-- Built-in **debug overlay** (TAB to toggle)
+- 🎮 **SceneManager** – Clean scene switching with stack support  
+- 🔊 **AudioManager** – Global control for music and SFX across scenes  
+- ⏸️ **Pause Menu** – ESC to pause from any scene, with back-to-game or quit options  
+- 🎨 **Asset Helpers** – Load images, sounds, and fonts with simple path functions  
+- 🧱 **SceneBase** – Shared UI tools like centered text, score rendering, etc.  
+- 🧪 **Debug Overlay** – Toggle live FPS, scene info, and more (TAB)  
+- 💡 **Modular Folder Structure** – Easy to extend, clean to maintain  
+
+---
+
+## 📘 Version History
+
+### v2.1 – AudioManager Update
+- Added global `AudioManager` for music and SFX
+- Scenes can now control background music and sound effects
+- Small bug fixes and formatting improvements
+
+### v2.0 – Modular PolarisKit Core
+- Redesigned folder structure for clarity and reusability
+- Added `SceneManager`, `SceneFactory`, and `SceneRegistry` system
+- Introduced `PauseMenu` scene with built-in controls
+- Debug overlay toggle (TAB) with scene name, FPS, and manager state
+- Centralized asset loading using `ASSET()`, `IMAGE()`, `SOUND()`, and `FONT()` helpers
+
+### v1.0 – Initial Release
+- Basic scene switching and update/draw loop
+- Static title screen and placeholder gameplay
+- Early asset loader with minimal setup
+
+---
+
+## 🕹️ Controls
+
+- SPACE: Start the game  
+- ESC: Pause the game  
+- B: Resume from pause  
+- Q: Quit from pause  
+- TAB: Toggle debug overlay  
+
+---
+
+## 📦 Requirements
+
+- Python 3.8 or later  
+- Pygame 2.x  
 
 ---
 
 ## 💡 Why PolarisKit?
 
-Pygame is a powerful library, but starting from scratch every time can slow development.  
-PolarisKit provides a polished foundation so you can focus on what matters: **gameplay**.
-
----
-
-## 🚀 Upcoming in v2.0
-
-PolarisKit is evolving! Version 2.0 will include:
-
-### Core System Enhancements
-- [ ] Refactor `SceneManager` to use **stack-based scene management**
-- [ ] Support `push_scene()` and `pop_scene()` methods
-- [ ] Maintain active `scene_stack` for layered rendering and logic
-
-### Scene Lifecycle Methods
-- [ ] Add `on_enter()` - runs when a scene is pushed
-- [ ] Add `on_exit()` - runs when a scene is popped
-- [ ] Ensure smooth transitions between scenes
-
-### Global Pause System
-- [ ] ESC key pushes the **PauseScene** onto the stack
-- [ ] `B` key pops the pause menu and resumes the last scene
-- [ ] Optional pause countdown support (e.g., unpause after timer)
-
-### Save / Load System (Simple)
-- [ ] Press `SPACE` in MainScene to increase score
-- [ ] Press `1` to **save** profile to `saves/1.json`
-- [ ] Press `2` to **delete** the save file
-- [ ] Basic save file format:
-  ```json
-  {
-    "name": "Player 1",
-    "score": 20
-  }
+PolarisKit helps you start faster and stay organized when building 2D games with Pygame.  
+It's lightweight enough for small arcade projects, but structured enough to support full-scale game systems.
 
 ---
 
