@@ -9,6 +9,16 @@ It includes built-in scene management, asset handling, audio control, and a glob
 
 ---
 
+## 🔍 At a Glance
+
+- ⌨️ Python + Pygame 2.x
+- 🧱 Modular scene system
+- 🎧 Built-in audio support
+- 🧪 Debug tools for FPS + state
+- 🚀 Game-ready architecture in minutes
+
+---
+
 ## 🚀 Features
 
 - 🎮 **SceneManager** – Clean scene switching with stack support  
@@ -86,4 +96,4 @@ Marco @ **SB Studios**
 
 - **Galactic Tour 64** – Arcade-style racing game  
 - **Callisto’s Trial** – Action roguelike 
-- More coming soon
+- And PolarisKit is just getting started.
