@@ -31,7 +31,64 @@ It includes built-in scene management, asset handling, audio control, and a glob
 
 ---
 
+## Upcoming Features
+
+## Core Architecture
+
+- [x] Scene stack manager supports push(), pop(), replace()
+- [ ] SceneManager supports stack draw behavior (draw entire stack)
+- [x] Scene registration system (scene_registry) working
+
+## SceneBase Features
+
+- [x] handle_keydown(event) pattern used consistently
+- [ ] input_locked flag implemented in SceneBase
+- [ ] compute_fade_alpha() helper in SceneBase
+- [ ] transition fade in/out support in SceneBase or SceneManager
+- [ ] Scene args supported (SceneBase accepts **kwargs)
+- [ ] draw_overlay(screen, alpha) helper available
+
+## SceneManager Features
+
+- [ ] Stack draw behavior implemented
+- [ ] Scene args supported (SceneManager can pass args to scenes)
+- [ ] Transition fade system supported globally
+
+## Scene Patterns
+
+- [x] All scenes use handle_keydown()
+- [x] All scenes use constants for text (TITLE_TEXT, etc.)
+- [x] All scenes use helper_font and display credits text
+- [ ] Optional: Scenes that need an overlay (Pause, Settings) use draw_overlay()
+
+## Global Features
+
+- [ ] FPS overlay toggle available (SHOW_FPS flag)
+- [ ] Simple global config (SHOW_FPS, DEBUG_MODE, etc.)
+
+## Included Standard Scenes
+
+- [x] IntroScene (fade in, text fade in, space to skip)
+- [ ] TitleScene (scrollable menu)
+- [ ] MainScene (actual game state)
+- [x] PauseScene (overlay, back to game, quit)
+- [ ] SettingsScene (toggle FPS, Return to Title, other options)
+
+## Code Quality
+
+- [ ] SceneBase remains clean (no scene-specific junk)
+- [ ] Scene patterns consistent and reusable
+- [ ] Constants used properly
+- [ ] No duplication of fade logic across scenes
+
+---
+
 ## 📘 Version History
+
+### v2.2 - Event Handler Update
+- Removed event handling from the update function
+- Added constants for easier management
+- Improved Title Screen UI
 
 ### v2.1 – AudioManager Update
 - Added global `AudioManager` for music and SFX
