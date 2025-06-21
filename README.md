@@ -2,151 +2,159 @@
   <img src="images/background_image.png" width="640" alt="PolarisKit Title Screen">
 </p>
 
-# ❄️ PolarisKit – A Lightweight Game Starter Kit for Pygame
+# ❄️ PolarisKit - A Lightweight, Professional Game Starter Kit for Pygame
 
-**PolarisKit** is a modular, scalable, and beginner-friendly starter kit for creating 2D games in Python using Pygame.  
-It includes built-in scene management, asset handling, audio control, and a global pause/debug system — all designed to help you build polished games faster.
+**PolarisKit** is a modular, scalable, and beginner-friendly starter kit for building 2D games in Python using Pygame.
+
+It includes built-in scene management, audio control, transitions, save system, and debug overlay, all designed to help you build polished, maintainable games with clean architecture.
 
 ---
 
 ## 🔍 At a Glance
 
-- ⌨️ Python + Pygame 2.x  
-- 🧱 Modular scene system  
-- 🎧 Built-in audio support  
-- 🧪 Debug tools for FPS + state  
-- 🎬 Smooth transition system with fade support  
-- 🚀 Game-ready architecture in minutes  
+- Python 3.8+ with Pygame 2.x
+- Modular stack-based scene system
+- Audio manager with global control
+- Seamless fade-in/out transitions via Transition Manager
+- Save system with simple JSON persistence
+- Debug overlay for live state inspection
+- Professional architecture ready for real games
 
 ---
 
-## 🚀 Features
+## 🚀 Key Features
 
-- 🎮 **SceneManager** – Clean scene switching with stack support and built-in fade transitions  
-- 🔊 **AudioManager** – Global control for music and SFX across scenes  
-- ⏸️ **Pause Menu** – ESC to pause from any scene, with back-to-game or quit options  
-- 🎨 **Asset Helpers** – Load images, sounds, and fonts with simple path functions  
-- 🧱 **SceneBase** – Shared UI tools like centered text, score rendering, etc.  
-- 🧪 **Debug Overlay** – Toggle live FPS, scene info, and more (TAB)  
-- 🌄 **Built-in Fade System** – Automatic fade-in and fade-out during major scene changes  
-- 💡 **Modular Folder Structure** – Easy to extend, clean to maintain  
+### Scene Manager
 
----
+- **SceneManager**: Full stack-based scene switching (`push()`, `pop()`, `replace()`)
+- Central manager object that holds all subsystems (`audio`, `save`, `transition`)
+- `SceneBase` inheritance ensures clean scene design
+- `on_enter()` and `on_exit()` hooks for clean lifecycle transitions
 
-## 🧪 Upcoming Features
+### Transition Manager
 
-### Core Architecture
+- **TransitionManager**: Centralized fade-in and fade-out system
+- Overlay transitions run directly within the manager (not as separate scenes)
+- Easily extendable for additional transition effects in future versions
 
-- [x] Scene stack manager supports `push()`, `pop()`, `replace()`  
-- [ ] SceneManager supports stack draw behavior (draw entire stack)  
-- [x] Scene registration system (`scene_registry`) working  
-- [ ] Transition system wraps scenes with a `FadeOutScene` wrapper  
-- [ ] Scene args supported (SceneManager can pass args to scenes)  
+### Save Manager
 
-### SceneBase Features
+- **SaveManager**: JSON-based save/load/delete support
+- Flexible dictionary-based save structure
+- Lightweight and easily extendable
 
-- [x] `handle_keydown(event)` pattern used consistently  
-- [x] `save_manager` access and update pattern  
-- [x] Debug overlay support  
+### Audio Manager
 
-### SceneManager Features
+- **AudioManager**: Unified control of music and sound effects
+- Centralized volume control
+- Simple API for scene-based sound playback
 
-- [ ] Built-in `FadeOutScene` wrapper for `replace()` transitions  
-- [ ] Fade-in behavior scaffolded (TBD: centralized vs scene-local)  
-- [ ] Optional `fade=False` flag for manual transition control  
+### Debugging
 
-### Scene Patterns
-
-- [x] All scenes use `handle_keydown()`  
-- [x] All scenes use constants for text (e.g. `TITLE_TEXT`)  
-- [x] All scenes use `helper_font` and display credits  
-
-### Global Features
-
-- [ ] Global config (e.g. `SHOW_FPS`, `DEBUG_MODE`) via `settings/config.py`  
-- [ ] Consistent fade-out on major scene transitions (`replace()`)  
+- Toggleable **Debug Overlay** (TAB)
+- Displays FPS and current scene stack state
 
 ---
 
-## 🎭 Included Standard Scenes
+## 🌐 Architecture Overview
 
-- [x] IntroScene – Polaris logo + fade in/out  
-- [x] TitleScene – Game start menu with music  
-- [ ] MainScene – Gameplay scene  
-- [x] PauseScene – ESC → overlay with resume + quit  
+### Managers
+
+- SceneManager (Core runtime stack)
+- AudioManager (Music/SFX control)
+- SaveManager (Persistent save system)
+- TransitionManager (Fade transitions)
+
+### Folder Structure
+
+- `polariskit/`
+  - `main.py`
+  - `managers/`
+    - `scene_manager.py`
+    - `audio_manager.py`
+    - `save_manager.py`
+    - `transition_manager.py`
+  - `scene_engine/`
+    - `scene_base.py`
+    - `scene_loader.py`
+    - `scene_registry.py`
+    - `scene_factory.py`
+  - `scenes/`
+    - (your game scenes)
+  - `settings/`
+    - `config.py`
+    - `paths.py`
+  - `assets/`
+    - `fonts/`
+    - `images/`
+    - `sounds/`
+  - `data/`
+    - `saves/`
+  - `README.md`
 
 ---
 
-## 📘 Version History
+## 👋 Who PolarisKit Is For
 
-### v2.3 – Fade System Integration (Coming Soon)
-- Added fade-out wrapper for scene transitions
-- Automatic fading on `replace()` transitions
-- IntroScene + TitleScene now support fade visuals
-- SceneManager handles transition timing
-- Maintains push/pop behavior as instant
-
-### v2.2 – Event Handler Update
-- Removed event handling from the `update()` function
-- Added constants for text assets
-- Improved Title Screen UI
-
-### v2.1 – AudioManager Update
-- Added global `AudioManager` for music and SFX
-- Scenes can now control background music and sound effects
-- Small bug fixes and formatting improvements
-
-### v2.0 – Modular PolarisKit Core
-- Redesigned folder structure for clarity and reusability
-- Added `SceneManager`, `SceneFactory`, and `SceneRegistry`
-- Introduced `PauseScene` with built-in controls
-- Debug overlay toggle (TAB) with scene name, FPS, and manager state
-- Centralized asset loading with `ASSET()`, `IMAGE()`, `SOUND()`, `FONT()` helpers
+- Developers building 2D games with Pygame who want professional architecture
+- Students or hobbyists who want clean, extensible templates
+- Educators looking for practical code organization for game dev courses
+- Game jams or prototypes needing rapid setup with scalable structure
 
 ---
 
-## 🕹️ Controls
+## 🕹️ Controls (Default Demo Controls)
 
-- `SPACE`: Start the game  
-- `ESC`: Pause the game  
-- `B`: Resume from pause  
-- `Q`: Quit from pause  
-- `TAB`: Toggle debug overlay  
+- `SPACE`: Start / Confirm
+- `ESC`: Pause Menu
+- `B`: Resume from Pause
+- `Q`: Quit from Pause
+- `TAB`: Toggle Debug Overlay
 
 ---
 
 ## 📦 Requirements
 
-- Python 3.8 or later  
-- Pygame 2.x  
+- Python 3.8 or later
+- Pygame 2.x
 
 ---
 
-## 💡 Why PolarisKit?
+## 🌟 Version History
 
-PolarisKit helps you start faster and stay organized when building 2D games with Pygame.  
-It's lightweight enough for small arcade projects, but structured enough to support full-scale game systems.
+### v2.0 — PolarisKit Core Rewrite (Current)
+
+- Fully modular manager system
+- TransitionManager for clean fade transitions
+- Unified SceneBase inheritance model
+- Scene lifecycle hooks (`on_enter()`, `on_exit()`)
+- Central SceneManager holding all managers (`audio`, `save`, `transition`)
+- JSON-based SaveManager with delete functionality
+- Clean scene switching architecture
+
+### v1.x — Early Versions
+
+- Initial scene stack system
+- Debug overlay (TAB)
+- Asset loading helpers (`ASSET()`, `IMAGE()`, `SOUND()`, `FONT()`)
+- AudioManager introduction
+- Early scene argument passing system
 
 ---
 
 ## 🔒 Code Access
 
-> The codebase is currently **private**.  
-> This repository is a **project showcase** highlighting features, screenshots, and development direction.  
+> This repository is currently **private**.
+>
+> This showcase demonstrates the system architecture, features, and future direction of PolarisKit.
+>
 > Interested in early access or collaboration?  
-> Reach out via [LinkedIn](https://www.linkedin.com/in/marco-a-gonzalez99).
+> Reach out on [LinkedIn](https://www.linkedin.com/in/marco-a-gonzalez99).
 
 ---
 
-## 👤 Built By
+
+## 🔧 Built By
 
 Marco @ **SB Studios**  
 [GitHub](https://github.com/marcogonzalez99) · [LinkedIn](https://www.linkedin.com/in/marco-a-gonzalez99)
-
----
-
-## 🧊 Games Built with PolarisKit
-
-- **Galactic Tour 64** – Arcade-style racing  
-- **Callisto’s Trial** – Action roguelike  
-- **Solen** – Calm top-down world-building  
