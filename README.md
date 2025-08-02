@@ -4,55 +4,57 @@
 
 # ❄️ PolarisKit - A Lightweight, Professional Game Starter Kit for Pygame
 
-**PolarisKit** is a modular, scalable, and beginner-friendly starter kit for building 2D games in Python using Pygame.
-
-It includes built-in scene management, audio control, transitions, save system, and debug overlay, all designed to help you build polished, maintainable games with clean architecture.
+**PolarisKit** is a clean, scalable, and beginner-friendly 2D game starter kit built in Python using Pygame.  
+It provides a polished foundation with modular systems, making it ideal for both rapid prototyping and complete games.
 
 ---
 
 ## 🔍 At a Glance
 
-- Python 3.8+ with Pygame 2.x
-- Modular stack-based scene system
-- Audio manager with global control
-- Seamless fade-in/out transitions via Transition Manager
-- Save system with simple JSON persistence
-- Debug overlay for live state inspection
-- Professional architecture ready for real games
+- Python 3.8+ with Pygame 2.x  
+- Clean, modular architecture with centralized managers  
+- Stack-based scene manager with lifecycle hooks  
+- Transition system with smooth fade effects  
+- JSON-based save system with easy toggling  
+- Audio system for music/SFX playback  
+- Toggleable debug overlay for live scene/fps data
 
 ---
 
 ## 🚀 Key Features
 
-### Scene Manager
+### Scene Management
 
-- **SceneManager**: Full stack-based scene switching (`push()`, `pop()`, `replace()`)
-- Central manager object that holds all subsystems (`audio`, `save`, `transition`)
-- `SceneBase` inheritance ensures clean scene design
-- `on_enter()` and `on_exit()` hooks for clean lifecycle transitions
+- `SceneManager` supports full stack control: `push()`, `pop()`, `replace()`
+- Holds shared managers: `audio`, `save`, `transition`, `screen`, `clock`
+- All scenes inherit from `SceneBase` for consistent API
+- Hooks: `on_enter()` and `on_exit()` for clean lifecycle control
 
-### Transition Manager
+### Transitions
 
-- **TransitionManager**: Centralized fade-in and fade-out system
-- Overlay transitions run directly within the manager (not as separate scenes)
-- Easily extendable for additional transition effects in future versions
+- `TransitionManager` enables fade-in and fade-out overlays
+- Non-intrusive: overlays sit on top of the current scene
+- Customizable speed and opacity
+- Delivers seamless scene transitions for a more polished user experience
 
-### Save Manager
+### Save System
 
-- **SaveManager**: JSON-based save/load/delete support
-- Flexible dictionary-based save structure
-- Lightweight and easily extendable
+- `SaveManager` stores data as plain JSON
+- Includes `load()`, `save(data)`, `delete()`, and `exists()` methods
+- Automatically creates file on first access
+- Assumes well-structured behavior from developers for flexibility
 
-### Audio Manager
+### Audio System
 
-- **AudioManager**: Unified control of music and sound effects
-- Centralized volume control
-- Simple API for scene-based sound playback
+- `AudioManager` plays music and SFX from `/assets/sounds/`
+- `play_music()`, `play_sfx()`, and volume toggles
+- Scene-aware audio control
 
 ### Debugging
 
-- Toggleable **Debug Overlay** (TAB)
-- Displays FPS and current scene stack state
+- **Debug Overlay** (toggle with `TAB`)
+- Displays current scene and FPS info
+- Built-in to `SceneBase`, no setup required
 
 ---
 
@@ -94,6 +96,47 @@ It includes built-in scene management, audio control, transitions, save system, 
 
 ---
 
+## 🕹️ Demo Controls
+
+| Key         | Action                  |
+|-------------|-------------------------|
+| `SPACE`     | Start / Interact        |
+| `ESC`       | Pause Menu              |
+| `Q`         | Quit (from Pause)       |
+| `B`         | Resume Game (from Pause)|
+| `S`         | Toggle save value       |
+| `D`         | Delete save data        |
+| `TAB`       | Toggle Debug Overlay    |
+
+---
+
+## 🌟 Version History
+
+### ✅ v3.0 — Complete PolarisKit Cleanup (2025-08-02)
+
+- Full project-wide refactor for professionalism and consistency
+- Added docstrings to every manager, config file, and asset loader
+- All `SceneBase` children now follow offset constants and consistent layout structure
+- Save toggles and transitions implemented in demo scenes
+- Assumes responsible dev usage (minimal error handling, favoring clarity and control)
+- File structure and naming polished across all modules
+
+### 🔄 v2.0 — PolarisKit Core Rewrite
+
+- Lifecycle hooks (`on_enter()` / `on_exit()`)
+- Unified scene stack manager with shared managers
+- JSON-based save/load/delete system
+- AudioManager and TransitionManager introduced
+- First stable modular release
+
+### 🧪 v1.x — Experimental Stack Prototype
+
+- Initial proof of concept for stack-based scene switching
+- Basic AudioManager and DebugOverlay
+- No scene registry or auto-loading
+
+---
+
 ## 👋 Who PolarisKit Is For
 
 - Developers building 2D games with Pygame who want professional architecture
@@ -103,42 +146,10 @@ It includes built-in scene management, audio control, transitions, save system, 
 
 ---
 
-## 🕹️ Controls (Default Demo Controls)
-
-- `SPACE`: Start / Confirm
-- `ESC`: Pause Menu
-- `B`: Resume from Pause
-- `Q`: Quit from Pause
-- `TAB`: Toggle Debug Overlay
-
----
-
 ## 📦 Requirements
 
 - Python 3.8 or later
 - Pygame 2.x
-
----
-
-## 🌟 Version History
-
-### v2.0 — PolarisKit Core Rewrite (Current)
-
-- Fully modular manager system
-- TransitionManager for clean fade transitions
-- Unified SceneBase inheritance model
-- Scene lifecycle hooks (`on_enter()`, `on_exit()`)
-- Central SceneManager holding all managers (`audio`, `save`, `transition`)
-- JSON-based SaveManager with delete functionality
-- Clean scene switching architecture
-
-### v1.x — Early Versions
-
-- Initial scene stack system
-- Debug overlay (TAB)
-- Asset loading helpers (`ASSET()`, `IMAGE()`, `SOUND()`, `FONT()`)
-- AudioManager introduction
-- Early scene argument passing system
 
 ---
 
@@ -158,3 +169,7 @@ It includes built-in scene management, audio control, transitions, save system, 
 
 Marco @ **SB Studios**  
 [GitHub](https://github.com/marcogonzalez99) · [LinkedIn](https://www.linkedin.com/in/marco-a-gonzalez99)
+
+---
+
+ [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/J3J41IBU2Y)
