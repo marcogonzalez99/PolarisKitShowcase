@@ -9,6 +9,10 @@ It provides a polished foundation with modular systems, making it ideal for both
 
 ---
 
+ [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/J3J41IBU2Y)
+
+---
+
 ## 🔍 At a Glance
 
 - Python 3.8+ with Pygame 2.x  
@@ -169,7 +173,3 @@ It provides a polished foundation with modular systems, making it ideal for both
 
 Marco @ **SB Studios**  
 [GitHub](https://github.com/marcogonzalez99) · [LinkedIn](https://www.linkedin.com/in/marco-a-gonzalez99)
-
----
-
- [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/J3J41IBU2Y)
